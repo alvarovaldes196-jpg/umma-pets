@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UmmaPets | Alimentos y accesorios para mascotas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header index -->
+    <header class="header">
+      <h1 class="header__titulo">Umma Pets</h1>
+      <nav class="header__navegacion">
+        <ul class="header__lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="paginas/alimentos.html">Alimentos</a></li>
+          <li><a href="paginas/accesorios.html">Accesorios</a></li>
+          <li>
+            <a href="paginas/catalogo-completo.html">Catálogo Completo</a>
+          </li>
+          <li><a href="paginas/nosotros.html">Nosotros</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main index -->
+    <main class="main-index">
+      <!-- SECCION del banner -->
+      <section class="banner">
+        <img
+          src="imagenes/banner/banner-2.png"
+          alt="Logo Umma Pets junto al mensaje 'Tu amor se nota en lo que le das' y categorías de productos"
+        />
+      </section>
+
+      <!-- SECCION de marcas más elegidas -->
+      <section class="marcas">
+        <div class="marcas__contenedor">
+          <img src="imagenes/logos/logo-agility.png" alt="Agility" />
+          <img src="imagenes/logos/logo-purina.png" alt="Purina" />
+          <img src="imagenes/logos/logo-royal-canin.png" alt="Royal Canin" />
+          <img src="imagenes/logos/logo-raza.png" alt="Raza" />
+          <img src="imagenes/logos/logo-eukanuba.png" alt="Eukanuba" />
+        </div>
+      </section>
+
+      <!-- SECCION de productos destacados -->
+      <section class="destacados">
+        <h2>Destacados</h2>
+        <div class="destacados__contenedor">
+          <!-- Tarjeta 1 -->
+          <article class="tarjeta">
+            <img
+              src="imagenes/comida-perros/royalcanin-puppy-perro.JPG"
+              alt="Alimento Royal Canin Puppy para cachorros"
+            />
+            <div class="destacado__informacion">
+              <h3>Alimento Royal Canin Puppy para cachorros</h3>
+              <p>$00.00</p>
+            </div>
+          </article>
+          <article class="tarjeta">
+            <img
+              src="imagenes/accesorios/cucha-premium.JPG"
+              alt="Cucha Premium"
+            />
+            <div class="destacado__informacion">
+              <h3>Cucha Premium p/ grandes y chicos</h3>
+              <p>$00.00</p>
+            </div>
+          </article>
+          <article class="tarjeta">
+            <img
+              src="imagenes/accesorios/pato-juguete.JPG"
+              alt="Juguete Tejido Pato"
+            />
+            <div class="destacado__informacion">
+              <h3>Juguete Tejido Pato</h3>
+              <p>$00.00</p>
+            </div>
+          </article>
+          <article class="tarjeta">
+            <img
+              src="imagenes/accesorios/plato-comida-madera.JPG"
+              alt="Plato de Comida de Madera"
+            />
+            <div class="destacado__informacion">
+              <h3>Plato de Comida de Madera</h3>
+              <p>$00.00</p>
+            </div>
+          </article>
+        </div>
+        <a href="paginas/catalogo-completo.html" class="boton boton--catalogo"
+          >Ver catálogo completo</a
+        >
+      </section>
+
+      <!-- SECCION de como comprar-->
+      <section class="como-comprar">
+        <p>Simple y rápido</p>
+        <h2>¿Cómo funciona?</h2>
+        <div class="como-comprar__contenedor">
+          <article class="paso">
+            <img src="imagenes/iconos/icono-buscar.png" alt="Icono de Buscar" />
+            <h3>Explorá</h3>
+            <p>Buscá y encontrá lo que necesitás</p>
+          </article>
+          <article class="paso">
+            <img
+              src="imagenes/iconos/icono-carrito-compra.png"
+              alt="Icono de Carrito de Compras"
+            />
+            <h3>Agregá al carrito</h3>
+            <p>Seleccioná tus productos favoritos</p>
+          </article>
+          <article class="paso">
+            <img
+              src="imagenes/iconos/icono-tarjeta-credito.png"
+              alt="Icono de Tarjeta de Crédito"
+            />
+            <h3>Pagá</h3>
+            <p>Elegí tu método de pago preferido</p>
+          </article>
+          <article class="paso">
+            <img
+              src="imagenes/iconos/icono-transporte-envio.png"
+              alt="Icono de Transporte y Envíos"
+            />
+            <h3>Recibí tu pedido</h3>
+            <p>Tu compra llega en tiempo y forma</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer página index -->
+    <footer class="footer">
+      <section>
+        <h4>Umma Pets</h4>
+        <p>Tu amor se nota en lo que le das</p>
+        <p>Elegí calidad</p>
+      </section>
+
+      <section>
+        <h4>Navegación</h4>
+        <ul class="footer__lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="paginas/alimentos.html">Alimentos</a></li>
+          <li><a href="paginas/accesorios.html">Accesorios</a></li>
+          <li>
+            <a href="paginas/catalogo-completo.html">Catálogo Completo</a>
+          </li>
+          <li><a href="paginas/nosotros.html">Nosotros</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Información</h4>
+        <ul class="footer__lista">
+          <li>
+            <a href="paginas/nosotros.html#preguntas-frecuentes"
+              >Preguntas frecuentes</a
+            >
+          </li>
+          <li>
+            <a href="paginas/nosotros.html#envios-y-entregas"
+              >Envíos y entregas</a
+            >
+          </li>
+          <li>
+            <a href="paginas/nosotros.html#medios-de-pago">Medios de pago</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="footer__seccion">
+        <h4>Contacto</h4>
+        <ul class="footer__lista footer__lista--contacto">
+          <li>
+            <img
+              src="imagenes/iconos/icono-whatsapp.png"
+              alt="Icono de WhatsApp"
+            /><a href="https://wa.me/5493517452823" target="_blank"
+              >+54 9 351 745 2823</a
+            >
+          </li>
+          <li>
+            <img
+              src="imagenes/iconos/icono-instagram.png"
+              alt="Icono de Instagram"
+            /><a href="https://www.instagram.com/umma.pets/" target="_blank"
+              >Instagram</a
+            >
+          </li>
+          <li>
+            <img
+              src="imagenes/iconos/icono-telefono.png"
+              alt="Icono de Teléfono"
+            /><a href="tel:+5493517452823">+54 9 351 745 2823</a>
+          </li>
+          <li class="footer__horario">
+            <img src="imagenes/iconos/icono-reloj.png" alt="Icono de Reloj" />
+            <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+            <p>Sábados: 10:00 AM - 2:00 PM</p>
+          </li>
+        </ul>
+      </section>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
