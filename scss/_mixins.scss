@@ -1,0 +1,28 @@
+// Mixin para elementos flex centrados
+@mixin flex-center($gap: 0, $direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+// Mixin para botones
+@mixin boton-base {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+// Mixin con condicionales
+@mixin espacio-responsive($dispositivo) {
+  @if $dispositivo == mobile {
+    padding: 20px 15px;
+  } @else if $dispositivo == tablet {
+    padding: 30px 25px;
+  } @else {
+    padding: 40px 30px;
+  }
+}

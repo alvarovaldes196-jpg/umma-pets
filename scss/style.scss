@@ -1,0 +1,832 @@
+// VARIABLES
+
+@use "variables";
+@use "mixins";
+
+// RESET GENERAL
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Baloo 2", sans-serif;
+}
+
+// HEADER
+
+.header {
+  &__titulo {
+    background-color: variables.$color-rosa;
+    color: variables.$color-marron;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 56px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  &__lista {
+    background-color: variables.$color-crema;
+    border-bottom: 3px solid variables.$color-rosa;
+    padding: 30px 20px;
+
+    @include mixins.flex-center(40px);
+
+    list-style: none;
+    flex-wrap: wrap;
+
+    a {
+      text-decoration: none;
+      color: variables.$color-negro;
+      font-size: 18px;
+    }
+  }
+}
+
+// FOOTER
+
+.footer {
+  background-color: variables.$color-verde;
+  padding: 50px 100px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+
+  h4 {
+    font-size: 24px;
+  }
+
+  a {
+    color: variables.$color-negro;
+    text-decoration: none;
+  }
+
+  &__lista {
+    list-style: none;
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    &--contacto {
+      li {
+        margin-bottom: 12px;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+
+  &__seccion {
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+  }
+
+  &__horarios {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+// MAIN GENERAL
+
+main {
+  background-color: variables.$color-gris-fondo;
+}
+
+// INDEX - BANNER
+
+.banner {
+  img {
+    width: 100%;
+    height: 75vh;
+    display: block;
+  }
+}
+
+// INDEX - MARCAS
+
+.marcas {
+  background-color: variables.$color-blanco;
+  text-align: center;
+
+  &__contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    img {
+      width: 220px;
+      height: 180px;
+      object-fit: contain;
+    }
+  }
+}
+
+// INDEX - DESTACADOS
+
+.destacados {
+  padding: 60px 250px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__contenedor {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+// TARJETAS
+
+.tarjeta {
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  background-color: variables.$color-blanco;
+
+  img {
+    border-bottom: 2px solid rgb(220, 220, 220);
+    background-color: variables.$color-blanco;
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: contain;
+  }
+
+  &__informacion {
+    padding: 20px;
+  }
+
+  h3 {
+    font-size: 22px;
+    color: variables.$color-marron;
+    margin: 20px 15px 10px;
+  }
+
+  p {
+    margin: 10px 15px;
+    line-height: 1.5;
+
+    &:last-child {
+      font-size: 22px;
+      font-weight: bold;
+      color: variables.$color-negro;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// BOTÓN CATÁLOGO
+
+.boton--catalogo {
+  text-decoration: none;
+  color: variables.$color-negro;
+  font-size: 20px;
+  font-weight: 500;
+
+  border: 1px solid variables.$color-negro;
+  border-radius: 15px;
+
+  background-color: variables.$color-verde;
+  padding: 8px 20px;
+
+  display: block;
+  width: fit-content;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+// INDEX - CÓMO COMPRAR
+
+.como-comprar {
+  padding: 70px 100px;
+  text-align: center;
+  background-color: variables.$color-rosa-claro;
+
+  > p {
+    color: rgb(201, 125, 125);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    font-size: 38px;
+    margin-bottom: 55px;
+    color: variables.$color-marron;
+  }
+
+  &__contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}
+
+.paso {
+  flex: 1;
+  position: relative;
+
+  img {
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+    background-color: variables.$color-verde;
+    border-radius: 50%;
+    object-fit: contain;
+  }
+
+  &:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    width: 70%;
+    height: 2px;
+
+    background-color: variables.$color-verde;
+
+    top: 55px;
+    left: 70%;
+  }
+}
+
+// PRESENTACIÓN
+
+.presentacion {
+  padding: 60px 100px;
+  text-align: center;
+
+  h1 {
+    font-size: 40px;
+    color: variables.$color-marron;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  p {
+    max-width: 900px;
+    margin: 20px auto;
+    line-height: 1.7;
+  }
+
+  &__logo {
+    width: 260px;
+    margin-top: 40px;
+  }
+}
+
+// PRODUCTOS
+
+.productos {
+  padding: 60px 100px;
+
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    color: variables.$color-negro;
+    margin-bottom: 40px;
+  }
+
+  &__contenedor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+  }
+}
+
+// INFORMACIÓN - NOSOTROS
+
+.informacion {
+  padding: 50px 100px;
+
+  h2 {
+    color: variables.$color-marron;
+    margin-bottom: 25px;
+  }
+
+  h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  ul {
+    padding-left: 25px;
+  }
+
+  li {
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+}
+
+// CONTACTO
+
+.contacto {
+  padding: 60px 100px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  &__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 700px;
+    margin: auto;
+
+    input,
+    textarea {
+      padding: 12px;
+      border: 1px solid rgb(200, 200, 200);
+      border-radius: 10px;
+      font-family: inherit;
+    }
+  }
+}
+
+// BOTONES - EXTEND
+
+%boton-base {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.boton {
+  @extend %boton-base;
+}
+
+.boton--enviar {
+  @extend %boton-base;
+
+  background-color: variables.$color-verde;
+  color: variables.$color-negro;
+}
+
+// RESPONSIVE - CELULAR
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  // Header
+  .header {
+    &__titulo {
+      font-size: 40px;
+      text-align: center;
+    }
+
+    &__lista {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 25px 20px;
+    }
+  }
+
+  // Footer
+  .footer {
+    flex-direction: column;
+    padding: 40px 25px;
+    gap: 35px;
+  }
+
+  // Banner
+  .banner img {
+    width: 100%;
+    height: auto;
+  }
+
+  // Marcas
+  .marcas {
+    padding: 35px 20px;
+
+    &__contenedor {
+      flex-wrap: wrap;
+      gap: 15px;
+
+      img {
+        width: 120px;
+        height: 100px;
+      }
+    }
+  }
+
+  // Destacados
+  .destacados {
+    padding: 45px 20px;
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    &__contenedor {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+  }
+
+  .boton--catalogo {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+
+  // Cómo comprar
+  .como-comprar {
+    padding: 50px 20px;
+
+    > p {
+      font-size: 18px;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    &__contenedor {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  .paso {
+    width: 100%;
+
+    img {
+      width: 90px;
+      height: 90px;
+      padding: 22px;
+    }
+
+    &:not(:last-child)::after {
+      display: none;
+    }
+  }
+
+  // Presentación
+  .presentacion {
+    padding: 40px 20px;
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    &__logo {
+      width: 180px;
+      margin: 30px auto 0;
+      display: block;
+    }
+  }
+
+  // Productos
+  .productos {
+    padding: 40px 20px;
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    &__contenedor {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+  }
+
+  .tarjeta {
+    width: 100%;
+
+    img {
+      height: 220px;
+    }
+
+    &__informacion {
+      padding: 15px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  // Información
+  .informacion {
+    padding: 40px 20px;
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    p,
+    li {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  }
+
+  // Contacto
+  .contacto {
+    padding: 40px 20px;
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    &__formulario {
+      width: 100%;
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .boton--enviar {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+  }
+}
+
+// RESPONSIVE - TABLET
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  // Header
+  .header {
+    &__titulo {
+      font-size: 48px;
+    }
+
+    &__lista {
+      padding: 25px 30px;
+      gap: 25px;
+
+      a {
+        font-size: 17px;
+      }
+    }
+  }
+
+  // Footer
+  .footer {
+    padding: 45px 50px;
+    gap: 35px;
+    flex-wrap: wrap;
+
+    &__seccion {
+      min-width: 200px;
+    }
+  }
+
+  // Banner
+  .banner img {
+    width: 100%;
+    height: auto;
+  }
+
+  // Marcas
+  .marcas {
+    padding: 40px 30px;
+
+    &__contenedor {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+
+      img {
+        width: 180px;
+        height: 140px;
+      }
+    }
+  }
+
+  // Destacados
+  .destacados {
+    padding: 55px 60px;
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 35px;
+    }
+
+    &__contenedor {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+
+  .tarjeta {
+    img {
+      height: 260px;
+    }
+
+    &__informacion {
+      padding: 18px;
+    }
+  }
+
+  .boton--catalogo {
+    font-size: 19px;
+    margin-top: 35px;
+  }
+
+  // Cómo comprar
+  .como-comprar {
+    padding: 60px 40px;
+
+    > p {
+      font-size: 19px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 45px;
+    }
+
+    &__contenedor {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 45px;
+    }
+  }
+
+  .paso {
+    flex: 0 0 40%;
+
+    img {
+      width: 95px;
+      height: 95px;
+      padding: 23px;
+    }
+
+    &:not(:last-child)::after {
+      display: none;
+    }
+  }
+
+  // Presentación
+  .presentacion {
+    padding: 50px;
+
+    h1 {
+      font-size: 38px;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    &__logo {
+      width: 220px;
+      display: block;
+      margin: 35px auto 0;
+    }
+  }
+
+  // Productos
+  .productos {
+    padding: 50px;
+
+    h2 {
+      margin-bottom: 35px;
+    }
+
+    &__contenedor {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+
+  .tarjeta {
+    img {
+      height: 250px;
+    }
+
+    &__informacion {
+      padding: 18px;
+    }
+  }
+
+  // Información
+  .informacion {
+    padding: 50px;
+
+    h2 {
+      font-size: 32px;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+
+  // Contacto
+  .contacto {
+    padding: 50px;
+
+    h2 {
+      margin-bottom: 35px;
+    }
+
+    &__formulario {
+      max-width: 650px;
+
+      input,
+      textarea {
+        padding: 14px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .boton--enviar {
+    width: fit-content;
+    align-self: center;
+    padding: 14px 35px;
+  }
+}
+
+// MIXIN CON CONDICIONAL
+
+// Ejemplo de uso del mixin responsive.
+// Mantiene un único punto de control para los espacios.
+
+@media screen and (max-width: 767px) {
+  .seccion-responsive {
+    @include mixins.espacio-responsive(mobile);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .seccion-responsive {
+    @include mixins.espacio-responsive(tablet);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .seccion-responsive {
+    @include mixins.espacio-responsive(desktop);
+  }
+}
