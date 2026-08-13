@@ -1,4 +1,15 @@
-// Mixin para elementos flex centrados
+// ============================================
+// MIXINS - UTILIDADES REUTILIZABLES
+// ============================================
+// Colección de mixins para evitar repetición de código
+
+// ============================================
+// FLEXBOX MIXINS
+// ============================================
+
+/// Mixin para crear contenedor flex centrado
+/// @param {number} $gap - Espaciado entre elementos (default: 0)
+/// @param {string} $direction - Dirección flex: row | column (default: row)
 @mixin flex-center($gap: 0, $direction: row) {
   display: flex;
   justify-content: center;
@@ -7,22 +18,237 @@
   gap: $gap;
 }
 
-// Mixin para botones
+/// Mixin para flex con espaciado entre elementos
+/// @param {number} $gap - Espaciado entre elementos
+@mixin flex-between($gap: 20px) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $gap;
+}
+
+/// Mixin para flex en columna
+/// @param {number} $gap - Espaciado vertical entre elementos
+@mixin flex-column($gap: 10px) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+// ============================================
+// GRID MIXINS
+// ============================================
+
+/// Mixin para grid responsive automático
+/// @param {number} $columns - Cantidad de columnas en desktop
+/// @param {number} $gap - Espaciado entre elementos
+@mixin grid-auto($columns: 3, $gap: 20px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// ============================================
+// TIPOGRAFÍA MIXINS
+// ============================================
+
+/// Mixin para títulos principales (H1)
+@mixin heading-1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(91, 58, 41);
+}
+
+/// Mixin para subtítulos (H2)
+@mixin heading-2 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/// Mixin para textos destacados (H3)
+@mixin heading-3 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/// Mixin para textos de cuerpo
+@mixin body-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/// Mixin para textos pequeños
+@mixin small-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+// ============================================
+// BOTONES MIXINS
+// ============================================
+
+/// Mixin base para botones
 @mixin boton-base {
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
   font-family: inherit;
   font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }
 
-// Mixin con condicionales
+/// Mixin para botón primario
+@mixin boton-primario($bg-color, $text-color: #000) {
+  @include boton-base;
+  background-color: $bg-color;
+  color: $text-color;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// ============================================
+// RESPONSIVE MIXINS
+// ============================================
+
+/// Mixin para espaciado responsivo condicional
+/// @param {string} $dispositivo - mobile | tablet | desktop
 @mixin espacio-responsive($dispositivo) {
   @if $dispositivo == mobile {
     padding: 20px 15px;
   } @else if $dispositivo == tablet {
     padding: 30px 25px;
-  } @else {
+  } @else if $dispositivo == desktop {
     padding: 40px 30px;
+  }
+}
+
+/// Mixin para media query mobile
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+/// Mixin para media query tablet
+@mixin tablet {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+/// Mixin para media query desktop
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+// ============================================
+// EFECTOS VISUALES MIXINS
+// ============================================
+
+/// Mixin para sombra elegante
+/// @param {string} $size - sm | md | lg | xl
+@mixin shadow($size: md) {
+  @if $size == sm {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  } @else if $size == md {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  } @else if $size == lg {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  } @else if $size == xl {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/// Mixin para efecto hover con elevación
+@mixin hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    @include shadow(lg);
+  }
+}
+
+/// Mixin para transición suave
+/// @param {list} $properties - propiedades a transicionar
+@mixin smooth-transition($properties: all) {
+  transition: $properties 0.3s ease;
+}
+
+// ============================================
+// UTILIDADES MIXINS
+// ============================================
+
+/// Mixin para truncar texto en una línea
+@mixin truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/// Mixin para overflow con scroll suave
+@mixin smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/// Mixin para centrar un elemento absolutamente
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/// Mixin para fondo con opacidad
+/// @param {color} $color - color del fondo
+/// @param {number} $opacity - valor de opacidad (0-1)
+@mixin bg-opacity($color, $opacity: 0.5) {
+  background-color: rgba($color, $opacity);
+}
+
+// ============================================
+// ACCESIBILIDAD MIXINS
+// ============================================
+
+/// Mixin para remover visibilidad sin remover del flujo del DOM
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/// Mixin para foco visible en elementos interactivos
+@mixin focus-visible {
+  &:focus {
+    outline: 2px solid rgb(91, 58, 41);
+    outline-offset: 2px;
   }
 }

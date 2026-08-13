@@ -1,10 +1,98 @@
-// Colores principales de UmmaPets
+// ============================================
+// VARIABLES - UMMA PETS
+// ============================================
+// Sistema de colores, tipografía y espaciado centralizado
 
-$color-verde: rgb(168, 197, 177);
-$color-marron: rgb(91, 58, 41);
-$color-rosa: rgb(255, 214, 214);
-$color-rosa-claro: rgb(255, 245, 245);
-$color-crema: rgb(247, 243, 233);
-$color-gris-fondo: rgb(245, 245, 245);
+// ============================================
+// COLORES PRINCIPALES - Paleta de Identidad
+// ============================================
+
+$color-rosa: rgb(255, 214, 214); // Header background
+$color-rosa-claro: rgb(255, 245, 245); // Sección "cómo comprar"
+$color-marron: rgb(91, 58, 41); // Títulos principales
+$color-verde: rgb(168, 197, 177); // Botones, accents
+$color-crema: rgb(247, 243, 233); // Header nav background
+
+// ============================================
+// COLORES NEUTRALES
+// ============================================
+
 $color-blanco: rgb(255, 255, 255);
 $color-negro: rgb(0, 0, 0);
+$color-gris-fondo: rgb(245, 245, 245);
+$color-gris-borde: rgb(220, 220, 220);
+$color-gris-input: rgb(200, 200, 200);
+
+// ============================================
+// COLORES DE FEEDBACK
+// ============================================
+
+$color-exito: #4caf50;
+$color-error: #f44336;
+$color-advertencia: #ff9800;
+
+// ============================================
+// TIPOGRAFÍA
+// ============================================
+
+$font-principal: "Baloo 2", sans-serif;
+$font-size-h1: 40px;
+$font-size-h2: 32px;
+$font-size-h3: 22px;
+$font-size-body: 16px;
+$font-size-small: 14px;
+
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// ============================================
+// ESPACIADO (Basado en sistema de 8px)
+// ============================================
+
+$space-xs: 8px;
+$space-sm: 12px;
+$space-md: 16px;
+$space-lg: 20px;
+$space-xl: 24px;
+$space-2xl: 40px;
+$space-3xl: 60px;
+
+// ============================================
+// BORDES Y RADIO
+// ============================================
+
+$border-radius-sm: 8px;
+$border-radius-md: 10px;
+$border-radius-lg: 15px;
+$border-radius-full: 50%;
+
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;
+
+// ============================================
+// SOMBRAS
+// ============================================
+
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.15);
+
+// ============================================
+// TRANSICIONES Y ANIMACIONES
+// ============================================
+
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// ============================================
+// BREAKPOINTS - MEDIA QUERIES
+// ============================================
+
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1023px;
+$desktop-min: 1024px;
