@@ -851,6 +851,23 @@ main {
   }
 }
 
+// RESPONSIVE - DESKTOP (1024px en adelante)
+@media screen and (min-width: 1024px) {
+  .productos__contenedor {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+  }
+
+  .destacados__contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .tarjeta img {
+    height: 300px;
+  }
+}
+
 // ============================================
 // MIXIN CON CONDICIONAL
 // ============================================
