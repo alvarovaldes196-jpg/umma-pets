@@ -8,8 +8,8 @@
 // ============================================
 
 /// Mixin para crear contenedor flex centrado
-/// @param {number} $gap - Espaciado entre elementos (default: 0)
-/// @param {string} $direction - Dirección flex: row | column (default: row)
+/// @param $gap
+/// @param $direction
 @mixin flex-center($gap: 0, $direction: row) {
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@
 }
 
 /// Mixin para flex con espaciado entre elementos
-/// @param {number} $gap - Espaciado entre elementos
+/// @param $gap
 @mixin flex-between($gap: 20px) {
   display: flex;
   justify-content: space-between;
@@ -28,7 +28,7 @@
 }
 
 /// Mixin para flex en columna
-/// @param {number} $gap - Espaciado vertical entre elementos
+/// @param $gap
 @mixin flex-column($gap: 10px) {
   display: flex;
   flex-direction: column;
@@ -40,8 +40,8 @@
 // ============================================
 
 /// Mixin para grid responsive automático
-/// @param {number} $columns - Cantidad de columnas en desktop
-/// @param {number} $gap - Espaciado entre elementos
+/// @param $columns
+/// @param $gap
 @mixin grid-auto($columns: 3, $gap: 20px) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
@@ -128,7 +128,7 @@
 // ============================================
 
 /// Mixin para espaciado responsivo condicional
-/// @param {string} $dispositivo - mobile | tablet | desktop
+/// @param $dispositivo - mobile | tablet | desktop
 @mixin espacio-responsive($dispositivo) {
   @if $dispositivo == mobile {
     padding: 20px 15px;
@@ -165,7 +165,7 @@
 // ============================================
 
 /// Mixin para sombra elegante
-/// @param {string} $size - sm | md | lg | xl
+/// @param $size
 @mixin shadow($size: md) {
   @if $size == sm {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -191,7 +191,7 @@
 }
 
 /// Mixin para transición suave
-/// @param {list} $properties - propiedades a transicionar
+/// @param $properties
 @mixin smooth-transition($properties: all) {
   transition: $properties 0.3s ease;
 }
@@ -222,8 +222,8 @@
 }
 
 /// Mixin para fondo con opacidad
-/// @param {color} $color - color del fondo
-/// @param {number} $opacity - valor de opacidad (0-1)
+/// @param $color
+/// @param $opacity
 @mixin bg-opacity($color, $opacity: 0.5) {
   background-color: rgba($color, $opacity);
 }
